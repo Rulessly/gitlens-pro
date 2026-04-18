@@ -58,6 +58,11 @@ var predefinedPaths = []ExtensionPath{
 		Path:        filepath.Join(".trae", "extensions"),
 		Description: "Trae 编辑器",
 	},
+	{
+		Name:        "CodeBuddy CN",
+		Path:        filepath.Join(".codebuddycn", "extensions"),
+		Description: "CodeBuddy CN 编辑器",
+	},
 }
 
 func getExtensionsDir() string {
@@ -80,6 +85,7 @@ func getExtensionsDir() string {
 
 	// 显示预设选项
 	fmt.Println("\n请选择 VSCode 扩展目录:")
+	fmt.Println("\n如果激活失败，请尝试登录gitlens再继续执行程序")
 	for i, path := range predefinedPaths {
 		fullPath := filepath.Join(home, path.Path)
 		fmt.Printf("[%d] %s (%s)\n    路径: %s\n", i+1, path.Name, path.Description, fullPath)
